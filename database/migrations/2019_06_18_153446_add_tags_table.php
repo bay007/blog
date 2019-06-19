@@ -20,11 +20,12 @@ class AddTagsTable extends Migration
         });
 
         Schema::create('article_tag', function (Blueprint $table) {
-            $table->bigInteger('id');
-            $table->timestamps();
+            $table->bigIncrements('id');
 
-            $table->integer('article_id')->unsigned();
-            $table->integer('tag_id')->unsigned();
+            $table->biginteger('article_id')->unsigned();
+            $table->biginteger('tag_id')->unsigned();
+
+            $table->timestamps();
 
             $table->foreign('article_id')->references('id')->on('articles')->ondelete('cascade');
             $table->foreign('tag_id')->references('id')->on('tags')->ondelete('cascade');

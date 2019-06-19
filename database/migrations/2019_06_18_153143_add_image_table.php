@@ -16,7 +16,7 @@ class AddImageTable extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->integer('article_id')->unsigned();
+            $table->biginteger('article_id')->unsigned();
             $table->foreign('article_id')->references('id')->on('articles')->ondelete('cascade');
             $table->timestamps();
         });
