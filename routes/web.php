@@ -16,7 +16,5 @@ Route::get('/', function () {
 });
 
 Route::prefix('articles')->group(function () {
-    Route::get('{article}', function (App\Article $article) {
-        return $article->content;
-    })->name('article_detail');
+    Route::get('{article}', ["uses" => "TestController@view"])->name('article_detail');
 });
