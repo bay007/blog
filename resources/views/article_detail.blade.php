@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('css/article.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/tailwind/tailwind.min.css')}}">
     <title>{{$article->title}}</title>
 </head>
 <body>
@@ -25,6 +26,6 @@
     @foreach ($article->tags as $tag)
         {{$tag->name}},
     @endforeach
-    </div>    
+    </div>
 </body>
 </html>
