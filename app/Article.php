@@ -2,10 +2,23 @@
 
 namespace App;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
+    use Sluggable;
+
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title',
+                'onUpdate' => true,
+            ],
+        ];
+    }
+
     protected $table = "articles";
     protected $fillable = ['title', 'content', 'category_id', 'user_id'];
 
