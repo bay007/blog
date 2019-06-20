@@ -12,22 +12,20 @@ let tailwindcss = require('tailwindcss');
  */
 
 mix.disableSuccessNotifications();
-mix
-	.js('resources/js/app.js', 'public/js')
-	.sass('resources/sass/app.scss', 'public/css/app.css')
-	.sass('resources/sass/plugins/tailwind.scss', 'public/css/app.css')
-	.options({
-		processCssUrls: false,
-		postCss: [
-			tailwindcss({
-				theme: {
-					extend: {}
-				},
-				variants: {},
-				plugins: []
-			})
-		]
-	});
+mix.js('resources/js/app.js', 'public/js').sass('resources/sass/app.scss', 'public/css/app.css').options({
+	processCssUrls: false,
+	postCss: [
+		tailwindcss({
+			theme: {
+				extend: {}
+			},
+			variants: {
+				opacity: [ 'responsive', 'hover' ]
+			},
+			plugins: []
+		})
+	]
+});
 
 if (mix.inProduction()) {
 	mix.version();
