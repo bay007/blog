@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{mix('css/app.css')}}" rel="stylesheet"> <!--Añadimos el css generado con webpack-->
     <title>{{$article->title}}</title>
 </head>
@@ -25,6 +26,9 @@
     @foreach ($article->tags as $tag)
         {{$tag->name}},
     @endforeach
+    </div>
+    <div id="app">
+        <example-component></example-component>
     </div>
     <script src="{{mix('js/app.js')}}"></script> <!--Añadimos el js generado con webpack, donde se encuentra nuestro componente vuejs-->
 </body>
