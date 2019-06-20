@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{asset('css/app.css')}}" rel="stylesheet"> <!--Añadimos el css generado con webpack-->
-    <link rel="stylesheet" href="{{asset('plugins/tailwind/tailwind.min.css')}}">
+    <link href="{{mix('css/app.css')}}" rel="stylesheet"> <!--Añadimos el css generado con webpack-->
     <title>{{$article->title}}</title>
 </head>
 <body>
@@ -27,6 +26,6 @@
         {{$tag->name}},
     @endforeach
     </div>
-    <script src="{{asset('js/app.js')}}"></script> <!--Añadimos el js generado con webpack, donde se encuentra nuestro componente vuejs-->
+    <script src="{{mix('js/app.js')}}"></script> <!--Añadimos el js generado con webpack, donde se encuentra nuestro componente vuejs-->
 </body>
 </html>
